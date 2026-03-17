@@ -2,7 +2,7 @@
   "name": "p131",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://hridyansh24.github.io/p131",
+  "homepage": "https://cs571-s26.github.io/p131",
   "type": "module",
   "scripts": {
     "dev": "vite",
