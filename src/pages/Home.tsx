@@ -1,4 +1,4 @@
-import Col from 'react-bootstrap/Col'
+import Col from 'react-bootstrap/Col'//s 
 import Row from 'react-bootstrap/Row'
 import HighlightCard from '../components/HighlightCard'
 import HeroSection from '../components/HeroSection'
