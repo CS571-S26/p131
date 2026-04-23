@@ -8,6 +8,8 @@ const links = [
   { path: '/', label: 'Home', end: true },
   { path: '/workout', label: 'Workout' },
   { path: '/schedule', label: 'Schedule' },
+  { path: '/progress', label: 'Progress' },
+  { path: '/tracker', label: 'Tracker' },
 ]
 
 const NavigationBar = () => {
@@ -42,9 +44,9 @@ const NavigationBar = () => {
             <Button
               variant='success'
               className='fw-semibold px-4 rounded-pill cta-outline'
-              onClick={() => navigate('/schedule')}
+              onClick={() => navigate('/tracker')}
             >
-              Get Started
+              Start Tracking
             </Button>
             <Button
               variant='outline-light'

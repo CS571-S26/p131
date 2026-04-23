@@ -1,3 +1,76 @@
+:root {
+  --bg: #030303;
+  --surface: #050505;
+  --text: #f5f5f5;
+  --muted: #9ca3af;
+  font-family:
+    'DIN Pro',
+    'DIN',
+    'Proxima Nova',
+    'Montserrat',
+    'Helvetica Neue',
+    sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:
+    'Proxima Nova',
+    'Montserrat',
+    'Helvetica Neue',
+    sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+p,
+small,
+li,
+button,
+input,
+label {
+  font-family:
+    'DIN Pro',
+    'DIN',
+    'Inter',
+    'Helvetica Neue',
+    sans-serif;
+  letter-spacing: 0.05em;
+}
+
+button {
+  text-transform: uppercase;
+}
+
+section + section {
+  margin-top: 3rem;
 }
