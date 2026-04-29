@@ -98,6 +98,7 @@ const HabitTracker = () => {
             <ListGroup.Item key={habit.id} className='py-3 habit-item d-flex align-items-center gap-3'>
               <Form.Check
                 id={habit.id}
+                aria-label={habit.label}
                 checked={completedHabits[habit.id]}
                 onChange={() => toggleHabit(habit.id)}
               />

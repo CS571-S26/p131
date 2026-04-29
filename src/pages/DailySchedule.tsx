@@ -1,6 +1,7 @@
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+import SectionHeading from '../components/SectionHeading'
 import ScheduleTimeline from '../components/ScheduleTimeline'
 
 const scheduleEntries = [
@@ -40,14 +41,11 @@ const quickWins = [
 const DailySchedule = () => {
   return (
     <section>
-      <div className='mb-4'>
-        <p className='text-uppercase text-success fw-semibold mb-1 tracking-wide'>Daily schedule</p>
-        <h2 className='h3 fw-bold text-white'>A structure you can actually follow.</h2>
-        <p className='text-secondary'>
-          Here&apos;s the default 24-hour rhythm the club recommends. It locks in movement, nutrition,
-          and reflection without taking over your day.
-        </p>
-      </div>
+      <SectionHeading
+        label='Daily schedule'
+        title='A structure you can actually follow.'
+        description="Here's the default 24-hour rhythm the club recommends. It locks in movement, nutrition, and reflection without taking over your day."
+      />
       <Row className='g-4'>
         <Col lg={7}>
           <ScheduleTimeline entries={scheduleEntries} />

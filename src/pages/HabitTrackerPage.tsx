@@ -1,17 +1,15 @@
 import Card from 'react-bootstrap/Card'
 import HabitTracker from '../components/HabitTracker'
+import SectionHeading from '../components/SectionHeading'
 
 const HabitTrackerPage = () => {
   return (
     <section>
-      <div className='mb-4 text-center text-md-start'>
-        <p className='text-uppercase text-success fw-semibold mb-1 tracking-wide'>Habit tracker</p>
-        <h2 className='h3 fw-bold text-white'>Celebrate the tiny wins.</h2>
-        <p className='text-secondary'>
-          This checklist is the interactive element of the project proposal. It lets users check off
-          daily habits, view a living progress bar, and reset the day whenever they need a fresh start.
-        </p>
-      </div>
+      <SectionHeading
+        label='Habit tracker'
+        title='Celebrate the tiny wins.'
+        description='Check off each daily habit, watch the progress bar climb, and reset whenever you need a fresh start.'
+      />
       <HabitTracker />
       <Card className='mt-4 shadow-sm border-0 bg-body-secondary'>
         <Card.Body>

@@ -9,7 +9,7 @@ const HeroSection = () => {
       <Row className='align-items-center g-4'>
         <Col lg={7}>
           <Badge bg='success' className='text-uppercase tracking-wide mb-3'>
-            Sprint 2 milestone
+            30-Day Challenge
           </Badge>
           <h1 className='display-5 fw-bold text-light hero-title mb-3'>
             30-Day Fitness Challenge & Wellness Club
@@ -19,7 +19,7 @@ const HeroSection = () => {
           <Card className='shadow hero-card'>
             <Card.Body>
               <p className='text-uppercase fw-semibold text-success mb-1 small'>Why this works</p>
-              <h3 className='h4 fw-bold'>Clear goals + accountability = sustainable change</h3>
+              <h2 className='h4 fw-bold'>Clear goals + accountability = sustainable change</h2>
               <ul className='list-unstyled mt-4 mb-0'>
                 <li className='d-flex gap-3 mb-3'>
                   <span className='hero-icon bg-success text-white rounded-circle'>1</span>

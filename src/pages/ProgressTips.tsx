@@ -2,6 +2,7 @@ import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+import SectionHeading from '../components/SectionHeading'
 
 const tipBuckets = [
   {
@@ -54,14 +55,11 @@ const faqs = [
 const ProgressTips = () => {
   return (
     <section>
-      <div className='mb-4'>
-        <p className='text-uppercase text-success fw-semibold mb-1 tracking-wide'>Progress tips</p>
-        <h2 className='h3 fw-bold text-white'>Recovery, nutrition, and mindset.</h2>
-        <p className='text-secondary'>
-          These are the support pillars students asked for during usability interviews. Keep them
-          nearby when the motivation dips.
-        </p>
-      </div>
+      <SectionHeading
+        label='Progress tips'
+        title='Recovery, nutrition, and mindset.'
+        description='These are the support pillars students asked for during usability interviews. Keep them nearby when the motivation dips.'
+      />
       <Row className='g-4 mb-4'>
         {tipBuckets.map((bucket) => (
           <Col md={4} key={bucket.title}>

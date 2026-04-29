@@ -2,6 +2,7 @@ import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+import SectionHeading from '../components/SectionHeading'
 
 const plans = [
   {
@@ -51,14 +52,11 @@ const workoutBlocks = [
 const WorkoutPlans = () => {
   return (
     <section>
-      <div className='mb-4'>
-        <p className='text-uppercase text-success fw-semibold mb-1 tracking-wide'>Workout plans</p>
-        <h2 className='h3 fw-bold text-white'>Choose the weekly cadence that matches your energy.</h2>
-        <p className='text-secondary'>
-          Every plan respects the 30-day challenge guardrails: 35-minute cap, clear intent for each
-          session, and guidance on when to rest.
-        </p>
-      </div>
+      <SectionHeading
+        label='Workout plans'
+        title='Choose the weekly cadence that matches your energy.'
+        description='Every plan respects the 30-day challenge guardrails: 35-minute cap, clear intent for each session, and guidance on when to rest.'
+      />
       <Row className='g-4'>
         {plans.map((plan) => (
           <Col md={6} key={plan.level}>
