@@ -7,11 +7,17 @@ import SectionHeading from '../components/SectionHeading'
 const plans = [
   {
     level: 'Foundation Plan',
+    image:
+      'https://images.unsplash.com/photo-1603077492579-39ff927823db?w=600&q=80&fit=crop&auto=format',
+    imageAlt: 'Black and gray dumbbells arranged on a gym floor, representing beginner-friendly equipment',
     subtitle: 'Perfect for new movers or students balancing heavy course loads.',
     focus: ['Full-body circuits 3x/week', 'Low-impact conditioning', 'Weekend flexibility reset'],
   },
   {
     level: 'Momentum Plan',
+    image:
+      'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=600&q=80&fit=crop&auto=format',
+    imageAlt: 'Woman performing a weight lifting exercise, representing intermediate strength training',
     subtitle: 'Intermediate option that layers progressive overload and longer endurance blocks.',
     focus: [
       'Upper / lower split with tempo cues',
@@ -61,6 +67,12 @@ const WorkoutPlans = () => {
         {plans.map((plan) => (
           <Col md={6} key={plan.level}>
             <Card className='h-100 shadow-sm'>
+              <Card.Img
+                variant='top'
+                src={plan.image}
+                alt={plan.imageAlt}
+                className='plan-card-img'
+              />
               <Card.Body>
                 <p className='text-success text-uppercase small fw-semibold mb-1'>{plan.level}</p>
                 <p className='fw-semibold text-white'>{plan.subtitle}</p>
@@ -70,8 +82,8 @@ const WorkoutPlans = () => {
                   ))}
                 </ul>
                 <Card.Text className='text-secondary mb-0'>
-                  Recommended split: Mon/Wed/Fri (strength), Tue/Thu (mobility), Sat (Endurance walk),
-                  Sun (Reflection + rest).
+                  Recommended split: Mon/Wed/Fri (strength), Tue/Thu (mobility), Sat (Endurance
+                  walk), Sun (Reflection + rest).
                 </Card.Text>
               </Card.Body>
             </Card>

@@ -1,3 +1,4 @@
+/* ── Layout ────────────────────────────────────────────────────────────── */
 .app-layout {
   background: radial-gradient(circle at top, #0f0f0f, #030303 60%);
   color: #f5f5f5;
@@ -8,6 +9,7 @@
   border-top: 1px solid rgba(255, 255, 255, 0.35);
 }
 
+/* ── Global overrides ──────────────────────────────────────────────────── */
 .text-dark,
 .card-title,
 .card-text {
@@ -19,16 +21,20 @@
   color: rgba(255, 255, 255, 0.75) !important;
 }
 
+/* ── Cards ─────────────────────────────────────────────────────────────── */
 .card {
   background-color: #050505;
   border: 1px solid rgba(57, 255, 20, 0.4);
   color: #f5f5f5;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* ── Utility ───────────────────────────────────────────────────────────── */
 .tracking-wide {
   letter-spacing: 0.1em;
 }
 
+/* ── Navbar ────────────────────────────────────────────────────────────── */
 .nav-elevated {
   border-bottom: 1px solid rgba(255, 255, 255, 0.35);
   background: rgba(0, 0, 0, 0.85) !important;
@@ -57,8 +63,22 @@
   color: #000;
 }
 
+/* ── Hero section ──────────────────────────────────────────────────────── */
 .hero-section {
   border-bottom: 1px solid #111;
+}
+
+.hero-title {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 60px rgba(57, 255, 20, 0.12);
+}
+
+.hero-text {
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 520px;
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
 .hero-card {
@@ -75,24 +95,93 @@
   font-weight: 700;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
-.hero-title {
+/* Hero CTA — primary green glow */
+.hero-cta-primary.btn-success {
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.hero-cta-primary.btn-success:hover {
+  box-shadow: 0 0 38px rgba(57, 255, 20, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Hero stats strip */
+.hero-stats {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1.5rem;
+}
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  padding-right: 1.5rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-stat:last-child {
+  border-right: none;
+}
+
+.hero-stat-value {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #39ff14;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.hero-stat-label {
+  font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 0.3rem;
 }
 
-.hero-text {
-  color: #cbd5f5;
-  max-width: 540px;
-}
-
+/* ── Highlight cards (home page) ───────────────────────────────────────── */
 .highlight-card.card {
   background: #050505;
   border: 1px solid rgba(57, 255, 20, 0.4);
   color: #f5f5f5;
 }
 
+/* Color-coded accent border: principle of contrast to differentiate categories */
+.highlight-card--success { border-top: 3px solid #39ff14 !important; }
+.highlight-card--primary { border-top: 3px solid #60a5fa !important; }
+.highlight-card--warning { border-top: 3px solid #fbbf24 !important; }
+
+/* Lift on hover: affordance — signals clickable/interactive */
+.highlight-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(57, 255, 20, 0.65) !important;
+  box-shadow: 0 8px 28px rgba(57, 255, 20, 0.1) !important;
+}
+
+/* ── Section divider label (home "how it works") ───────────────────────── */
+.section-divider-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+}
+
+.section-divider-label::before,
+.section-divider-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Habit tracker ─────────────────────────────────────────────────────── */
 .habit-tracker {
   background: #040404;
   border: 1px solid rgba(57, 255, 20, 0.4);
@@ -102,10 +191,15 @@
   border: 0;
   border-bottom: 1px solid rgba(57, 255, 20, 0.2);
   background: rgba(255, 255, 255, 0.02);
+  transition: background 0.15s ease;
 }
 
 .habit-tracker .list-group-item:last-child {
   border-bottom: 0;
+}
+
+.habit-tracker .list-group-item:hover {
+  background: rgba(57, 255, 20, 0.04);
 }
 
 .habit-item .form-check-input {
@@ -114,6 +208,8 @@
   background-color: #000;
   border: 2px solid #39ff14;
   border-radius: 4px;
+  flex-shrink: 0;
+  cursor: pointer;
 }
 
 .habit-item .form-check-input:checked {
@@ -121,16 +217,45 @@
   border-color: #39ff14;
 }
 
-.schedule-card {
-  border-left: 6px solid #39ff14;
-  background: #050505;
-  border: 1px solid rgba(57, 255, 20, 0.4);
+/* Progress bar smooth fill + glow at 100% */
+.habit-tracker .progress-bar {
+  transition: width 0.45s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+.habit-tracker .progress-bar.bg-success {
+  box-shadow: 0 0 14px rgba(57, 255, 20, 0.5);
+}
+
+/* All-complete banner */
+.habit-complete-banner {
+  background: linear-gradient(135deg, rgba(57, 255, 20, 0.08), rgba(57, 255, 20, 0.02));
+  border: 1px solid rgba(57, 255, 20, 0.35);
+  border-radius: 0.5rem;
+  padding: 0.9rem 1.25rem;
+  text-align: center;
+}
+
+/* ── Schedule timeline ─────────────────────────────────────────────────── */
+.schedule-card {
+  background: #050505;
+  border: 1px solid rgba(57, 255, 20, 0.2);
+  /* border-left must come after border shorthand */
+  border-left: 4px solid #39ff14;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.schedule-card:hover {
+  transform: translateX(3px);
+  border-color: rgba(57, 255, 20, 0.5);
+  border-left-color: #39ff14;
+}
+
+/* Time label: green so it reads as a timeline anchor */
 .schedule-time {
   min-width: 90px;
   letter-spacing: 0.2em;
-  color: #9ca3af;
+  color: #39ff14;
+  font-weight: 700;
 }
 
 .schedule-card p {
@@ -151,6 +276,7 @@
   color: #e5e7eb;
 }
 
+/* ── Accordions ────────────────────────────────────────────────────────── */
 .accordion-item,
 .accordion-button,
 .accordion-body {
@@ -169,8 +295,78 @@
   filter: invert(1);
 }
 
+/* ── Misc ──────────────────────────────────────────────────────────────── */
 .card.bg-body-secondary {
   background: #050505 !important;
   color: #fff !important;
   border: 1px solid rgba(57, 255, 20, 0.4) !important;
+}
+
+/* ── Images ────────────────────────────────────────────────────────────── */
+
+/* Full-width cinematic banner on Home page */
+.hero-banner {
+  position: relative;
+  margin: 1.5rem 0 0.5rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(57, 255, 20, 0.2);
+}
+
+.hero-banner-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.5) contrast(1.1);
+}
+
+/* Caption sits over the bottom of the banner */
+.hero-banner-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.6rem 1.25rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+}
+
+/* Workout plan card images */
+.plan-card-img {
+  height: 190px;
+  object-fit: cover;
+  filter: brightness(0.75) contrast(1.05);
+}
+
+/* Progress tip card images */
+.tip-card-img {
+  height: 160px;
+  object-fit: cover;
+  filter: brightness(0.7) contrast(1.05);
+}
+
+/* ── Badge contrast overrides (WCAG AA) ────────────────────────────────── */
+/* Bootstrap's default success/warning badges fail AA on dark backgrounds.  */
+/* Switching to outline-style keeps the theme and passes contrast.          */
+.badge.bg-success {
+  background-color: transparent !important;
+  color: #39ff14 !important;
+  border: 1px solid rgba(57, 255, 20, 0.6);
+}
+
+.badge.bg-primary {
+  background-color: transparent !important;
+  color: #60a5fa !important;
+  border: 1px solid rgba(96, 165, 250, 0.5);
+}
+
+.badge.bg-warning {
+  background-color: transparent !important;
+  color: #fbbf24 !important;
+  border: 1px solid rgba(251, 191, 36, 0.5);
 }

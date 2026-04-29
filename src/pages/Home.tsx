@@ -1,4 +1,4 @@
-import Col from 'react-bootstrap/Col'//s 
+import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import HighlightCard from '../components/HighlightCard'
 import HeroSection from '../components/HeroSection'
@@ -40,7 +40,16 @@ const Home = () => {
   return (
     <>
       <HeroSection />
+      <figure className='hero-banner'>
+        <img
+          src='https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=1400&q=75&fit=crop&auto=format'
+          alt='Fitness equipment including barbells and dumbbells inside a dark gym, representing the training environment for the 30-day challenge'
+          className='hero-banner-img'
+        />
+        <figcaption className='hero-banner-caption'>Where your 30 days begin.</figcaption>
+      </figure>
       <section className='py-4'>
+        <p className='section-divider-label mb-4'>How it works</p>
         <Row className='g-4'>
           {highlights.map((highlight) => (
             <Col md={4} key={highlight.title}>

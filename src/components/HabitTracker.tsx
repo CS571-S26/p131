@@ -91,8 +91,14 @@ const HabitTracker = () => {
           now={progress}
           label={`${progress}%`}
           variant={progress === 100 ? 'success' : 'info'}
-          className='mb-4'
+          className='mb-3'
         />
+        {progress === 100 && (
+          <div className='habit-complete-banner mb-4'>
+            <p className='text-success fw-bold mb-1'>All habits complete for today</p>
+            <small className='text-secondary'>Outstanding work — reset tomorrow for another streak.</small>
+          </div>
+        )}
         <ListGroup variant='flush'>
           {habits.map((habit) => (
             <ListGroup.Item key={habit.id} className='py-3 habit-item d-flex align-items-center gap-3'>

@@ -7,6 +7,9 @@ import SectionHeading from '../components/SectionHeading'
 const tipBuckets = [
   {
     title: 'Recovery & Mobility',
+    image:
+      'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80&fit=crop&auto=format',
+    imageAlt: 'Woman doing yoga meditation on a wooden floor, representing rest and recovery practices',
     text: 'Short flows + breathwork reduce soreness and help you stay consistent.',
     tips: [
       'Follow the 8-minute mobility reset built into the tracker.',
@@ -16,6 +19,9 @@ const tipBuckets = [
   },
   {
     title: 'Nutrition & Hydration',
+    image:
+      'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80&fit=crop&auto=format',
+    imageAlt: 'Bowl of fresh vegetables and nutritious healthy food, representing mindful eating habits',
     text: 'Fueling is 50% of the challenge. Prep once, eat mindful plates all week.',
     tips: [
       'Anchor each meal with protein, colorful plants, and smart carbs.',
@@ -25,6 +31,9 @@ const tipBuckets = [
   },
   {
     title: 'Consistency & Mindset',
+    image:
+      'https://images.unsplash.com/photo-1689877020200-403d8542d95d?w=600&q=80&fit=crop&auto=format',
+    imageAlt: 'A fully equipped gym with training machines and weights, representing commitment to the challenge',
     text: 'Behavior change happens by celebrating the tiny wins, not just PRs.',
     tips: [
       'Three misses? Revisit the schedule page and adjust the plan instead of quitting.',
@@ -64,6 +73,12 @@ const ProgressTips = () => {
         {tipBuckets.map((bucket) => (
           <Col md={4} key={bucket.title}>
             <Card className='h-100 shadow-sm'>
+              <Card.Img
+                variant='top'
+                src={bucket.image}
+                alt={bucket.imageAlt}
+                className='tip-card-img'
+              />
               <Card.Body>
                 <p className='text-uppercase text-success small fw-semibold mb-2'>{bucket.title}</p>
                 <p className='text-secondary'>{bucket.text}</p>

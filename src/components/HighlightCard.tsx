@@ -8,7 +8,7 @@ type HighlightCardProps = {
 }
 
 const HighlightCard = ({ title, description, bullets, accent }: HighlightCardProps) => (
-  <Card className='h-100 shadow-sm highlight-card'>
+  <Card className={`h-100 shadow-sm highlight-card highlight-card--${accent}`}>
     <Card.Body>
       <span className={`badge bg-${accent} text-uppercase mb-2`}>{title}</span>
       <p className='fw-semibold text-white'>{description}</p>
